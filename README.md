@@ -20,13 +20,13 @@ Pre-requisites
 --------------
 
 - Android SDK v23
-- Android Build Tools v23.0.0
+- Android Build Tools v23.0.1
 - Android Support Repository
 
 Screenshots
 -------------
 
-<img src="screenshots/1-main.png" height="400" alt="Screenshot"/> <img src="screenshots/2-settings.png" height="400" alt="Screenshot"/> 
+<img src="screenshots/1-main.png" height="400" alt="Screenshot"/> <img src="screenshots/2-signals.png" height="400" alt="Screenshot"/> 
 
 Getting Started
 ---------------
