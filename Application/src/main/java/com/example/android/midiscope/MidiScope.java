@@ -39,10 +39,6 @@ public class MidiScope extends MidiDeviceService {
         return new MidiReceiver[] { mInputReceiver };
     }
 
-    public static ScopeLogger getScopeLogger() {
-        return mScopeLogger;
-    }
-
     public static void setScopeLogger(ScopeLogger logger) {
         if (logger != null) {
             // Receiver that prints the messages.

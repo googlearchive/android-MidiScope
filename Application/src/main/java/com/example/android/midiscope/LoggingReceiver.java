@@ -20,6 +20,7 @@ import android.media.midi.MidiReceiver;
 import android.util.Log;
 
 import java.io.IOException;
+import java.util.Locale;
 import java.util.concurrent.TimeUnit;
 
 /**
@@ -45,15 +46,15 @@ public class LoggingReceiver extends MidiReceiver {
             throws IOException {
         StringBuilder sb = new StringBuilder();
         if (timestamp == 0) {
-            sb.append(String.format("-----0----: "));
+            sb.append("-----0----: ");
         } else {
             long monoTime = timestamp - mStartTime;
             double seconds = (double) monoTime / NANOS_PER_SECOND;
-            sb.append(String.format("%10.3f: ", seconds));
+            sb.append(String.format(Locale.US, "%10.3f: ", seconds));
         }
         sb.append(MidiPrinter.formatBytes(data, offset, count));
         sb.append(": ");
-        sb.append(MidiPrinter.formatMessage(data, offset, count));
+        sb.append(MidiPrinter.formatMessage(data, offset));
         String text = sb.toString();
         mLogger.log(text);
         Log.i(TAG, text);

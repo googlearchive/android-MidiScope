@@ -16,19 +16,19 @@
 
 package com.example.android.midiscope;
 
-import android.app.ActionBar;
-import android.app.Activity;
 import android.media.midi.MidiDeviceInfo;
 import android.media.midi.MidiManager;
 import android.media.midi.MidiReceiver;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ScrollView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.example.android.common.midi.MidiFramer;
 import com.example.android.common.midi.MidiOutputPortSelector;
@@ -39,7 +39,7 @@ import java.util.LinkedList;
 /**
  * App that provides a MIDI echo service.
  */
-public class MainActivity extends Activity implements ScopeLogger {
+public class MainActivity extends AppCompatActivity implements ScopeLogger {
 
     private static final int MAX_LINES = 100;
 
@@ -53,8 +53,8 @@ public class MainActivity extends Activity implements ScopeLogger {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
-        setActionBar((Toolbar) findViewById(R.id.toolbar));
-        ActionBar actionBar = getActionBar();
+        setSupportActionBar((Toolbar) findViewById(R.id.toolbar));
+        ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
             actionBar.setDisplayShowTitleEnabled(false);
         }

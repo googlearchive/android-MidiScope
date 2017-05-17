@@ -17,9 +17,11 @@
 package com.example.android.midiscope;
 
 public interface ScopeLogger {
+
     /**
      * Write the text string somewhere that the user can see it.
-     * @param text
+     *
+     * @param text The log message.
      */
     void log(String text);
 }

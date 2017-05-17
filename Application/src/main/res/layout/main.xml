@@ -20,7 +20,7 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-    <Toolbar
+    <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -37,7 +37,7 @@
             android:entries="@array/senders"
             android:popupTheme="@android:style/ThemeOverlay.Material.Light"/>
 
-    </Toolbar>
+    </android.support.v7.widget.Toolbar>
 
     <ScrollView
         android:id="@+id/scroll"

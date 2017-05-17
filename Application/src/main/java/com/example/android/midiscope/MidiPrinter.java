@@ -67,7 +67,7 @@ public class MidiPrinter {
         return sb.toString();
     }
 
-    public static String formatMessage(byte[] data, int offset, int count) {
+    public static String formatMessage(byte[] data, int offset) {
         StringBuilder sb = new StringBuilder();
         byte statusByte = data[offset++];
         int status = statusByte & 0xFF;
@@ -97,10 +97,11 @@ public class MidiPrinter {
                 sb.append(key).append(" = ").append(value).append('\n');
             }
             for (PortInfo port : info.getPorts()) {
-                sb.append((port.getType() == PortInfo.TYPE_INPUT) ? "input"
-                        : "output");
-                sb.append("[").append(port.getPortNumber()).append("] = \"").append(port.getName()
-                        + "\"\n");
+                sb.append((port.getType() == PortInfo.TYPE_INPUT) ? "input" : "output")
+                        .append("[")
+                        .append(port.getPortNumber())
+                        .append("] = \"")
+                        .append(port.getName()).append("\"\n");
             }
         }
         return sb.toString();
